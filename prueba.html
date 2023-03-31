@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de inputs de tipo radio</title>
+  </head>
+  <body>
+    <form>
+      <label>
+        <input type="radio" name="opcion" value="opcion1" checked>
+        Opción 1
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="opcion" value="opcion2">
+        Opción 2
+      </label>
+      <br>
+      <button type="button" onclick="ejecutar()">Ejecutar</button>
+    </form>
+    <script>
+      let opcionSeleccionada = document.querySelector('input[name="opcion"]:checked').value;
+
+      function ejecutar() {
+        const nuevaOpcionSeleccionada = document.querySelector('input[name="opcion"]:checked').value;
+        if (nuevaOpcionSeleccionada !== opcionSeleccionada) {
+          opcionSeleccionada = nuevaOpcionSeleccionada;
+        }
+        if (opcionSeleccionada === "opcion1") {
+          alert("Se ha seleccionado la opción 1");
+          // Aquí se ejecuta la orden correspondiente a la opción 1
+        } else if (opcionSeleccionada === "opcion2") {
+          alert("Se ha seleccionado la opción 2");
+          // Aquí se ejecuta la orden correspondiente a la opción 2
+        }
+      }
+    </script>
+  </body>
+</html>
